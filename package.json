@@ -1,0 +1,22 @@
+{
+  "name": "counterpoint",
+  "version": "1.0.0",
+  "description": "A website for uploading agumentative videos on a variety of topics",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cruss13/counterpoint.git"
+  },
+  "keywords": [
+    "counterpoint"
+  ],
+  "author": "CRuss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cruss13/counterpoint/issues"
+  },
+  "homepage": "https://github.com/cruss13/counterpoint#readme"
+}
