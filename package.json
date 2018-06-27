@@ -2,7 +2,7 @@
   "name": "counterpoint",
   "version": "1.0.0",
   "description": "A website for uploading agumentative videos on a variety of topics",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "export NODE_ENV=test && jasmine",
     "start": "node src/server.js"
