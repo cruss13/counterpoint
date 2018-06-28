@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "postgres",
+    "username": "CRuss",
     "password": null,
     "database": "counterpoint-dev",
     "host": "127.0.0.1",
@@ -9,7 +9,7 @@
     "operatorsAliases": false
   },
   "test": {
-    "username": "postgres",
+    "username": "CRuss",
     "password": null,
     "database": "counterpoint-test",
     "host": "127.0.0.1",

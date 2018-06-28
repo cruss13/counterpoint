@@ -2,7 +2,7 @@
   "name": "counterpoint",
   "version": "1.0.0",
   "description": "A website for uploading agumentative videos on a variety of topics",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "export NODE_ENV=test && jasmine",
     "start": "node src/server.js"
@@ -30,6 +30,7 @@
     "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-validator": "^5.0.2",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.32.6"
