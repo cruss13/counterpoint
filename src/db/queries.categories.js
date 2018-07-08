@@ -1,4 +1,5 @@
 const Category = require("./models").Category;
+const Section = require("./models").Section;
 
 module.exports = {
 
@@ -37,7 +38,12 @@ module.exports = {
   },
 
   getCategory(id, callback){
-    return Category.findById(id)
+    return Category.findById(id, {
+      include: [{
+        model: Section,
+        as: "sections"
+      }]
+    })
     .then((category) => {
       callback(null, category);
     })

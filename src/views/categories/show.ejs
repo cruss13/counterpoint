@@ -10,12 +10,22 @@
       <h1><%= category.title %></h1>
 
       <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a>
+      <a href="/categories/<%= category.id %>/sections/new" class="btn btn-success">New Section</a>
 
       <form style="display:initial" action="/categories/<%= category.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
 
-      <p><%= category.description %></p>
+      <hr>
+        <h1>Section</h1>
+        <ul class="list-group">
+          <% category.sections.forEach((section) => { %>
+            <li class="list-group-item">
+              <a href="/categories/<%= category.id %>/sections/<%= section.id %>"> <%= section.title %> </a>
+            </li>
+          <% }) %>
+        </ul>
+
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>
