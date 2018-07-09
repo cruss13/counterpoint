@@ -7,13 +7,23 @@
     <% include ../static/partials/navbar.ejs %>
 
     <main class="container">
+
+      <div style="display: inline-block">
       <h1><%= section.title %></h1>
 
         <a href="/categories/<%= section.categoryId %>/sections/<%= section.id %>/edit" class="btn btn-warning">Edit</a>
-
+        <a href="/categories/<%= section.categoryId %>/sections/<%= section.id %>/topics/new" class="btn btn-success">New Topic</a>
         <form style="display:initial" action="/categories/<%= section.categoryId %>/sections/<%= section.id %>/destroy" method="post">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
+
+        <hr>
+        <h1>Topics</h1>
+
+
+<!--    <div style="display: inline-block">
+
+</div> -->
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>

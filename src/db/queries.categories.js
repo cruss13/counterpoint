@@ -1,5 +1,6 @@
 const Category = require("./models").Category;
 const Section = require("./models").Section;
+const Topic = require("./models").Topic;
 
 module.exports = {
 
