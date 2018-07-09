@@ -18,8 +18,16 @@
         </form>
 
         <hr>
-        <h1>Topics</h1>
 
+        <h1>Topics</h1>
+        <ul class="list-group">
+          <% section.topics.forEach((topic) => { %>
+            <li class="list-group-item">
+              <a href="/categories/<%= section.categoryId %>/sections/<%= section.id %>/topics/<%= topic.id %>"> <%= topic.title %> </a>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
 
 <!--    <div style="display: inline-block">
 

@@ -20,7 +20,48 @@ module.exports = {
         console.log(err);
         res.redirect(500, "/topics/new");
       } else {
-        res.redirect(303, `/categories/${category.id}/sections/${section.id}/topics/`);
+        res.redirect(303, `/categories/${req.params.categoryId}/sections/${req.params.sectionId}`);
+      }
+    });
+  },
+
+  show(req, res, next){
+    topicQueries.getTopic(req.params.id, (err, topic) => {
+      if(err || topic == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("topics/show", {topic});
+      }
+    });
+  },
+
+  destroy(req, res, next){
+    topicQueries.deleteTopic(req.params.id, (err, deletedRecordsCount) => {
+      if(err){
+        res.redirect(500, `/categories/${req.params.categoryId}/sections/${req.params.sectionId}/topics/${req.params.id}`)
+      } else {
+        res.redirect(303, `/categories/${req.params.categoryId}/sections/${req.params.sectionId}`)
+      }
+    });
+  },
+
+  edit(req, res, next){
+    topicQueries.getTopic(req.params.id, (err, topic) => {
+      if(err || topic == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("topics/edit", {topic});
+      }
+    });
+  },
+
+  update(req, res, next){
+    topicQueries.updateTopic(req.params.id, req.body, (err, topic) => {
+      if(err || topic == null){
+        console.log(err);
+        res.redirect(404, `/categories/${req.params.categoryId}/sections/${req.params.sectionId}/topics/${req.params.id}`);
+      } else {
+        res.redirect(`/categories/${req.params.categoryId}/sections/${req.params.sectionId}/`);
       }
     });
   }

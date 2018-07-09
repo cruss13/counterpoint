@@ -7,7 +7,6 @@ module.exports = {
          "userName",
          {
            type: Sequelize.STRING,
-           onDelete: "CASCADE",
            allowNull: false,
          }
        );
