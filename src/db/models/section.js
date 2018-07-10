@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "sectionId",
       as: "topics"
     });
+    Section.hasMany(models.Post, {
+      foreignKey: "sectionId",
+      as: "posts"
+    });
   };
   return Section;
 };
