@@ -9,6 +9,18 @@
     <main class="container">
       <h1><%= topic.title %></h1>
 
+      <hr>
+
+      <h1>Posts</h1>
+
+      <ul class="list-group">
+        <% topic.posts.forEach((post) => { %>
+          <li class="list-group-item">
+            <a href="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/posts/<%= post.id %>"> <%= post.title %> </a>
+          </li>
+        <% }) %>
+      </ul>
+
       <a href="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/edit" class="btn btn-warning">Edit</a>
 
       <form style="display:initial" action="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/destroy" method="post">
