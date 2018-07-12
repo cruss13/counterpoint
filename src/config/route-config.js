@@ -6,6 +6,7 @@ module.exports = {
     const sectionRoutes = require("../routes/sections");
     const topicRoutes = require("../routes/topics");
     const postRoutes = require("../routes/posts");
+    const contactRoutes = require("../routes/contact");
 
     app.use(staticRoutes);
     app.use(userRoutes);
@@ -13,5 +14,6 @@ module.exports = {
     app.use(sectionRoutes);
     app.use(topicRoutes);
     app.use(postRoutes);
+    app.use(contactRoutes);
   }
 }
