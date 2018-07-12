@@ -1,10 +1,14 @@
 // npm test spec/integration/posts_spec.js
 
+const request = require("request");
+const server = require("../../src/server");
+const base = "http://localhost:3000/categories";
 const sequelize = require("../../src/db/models/index").sequelize;
 const Category = require("../../src/db/models").Category;
 const Section = require("../../src/db/models").Section;
 const Topic = require("../../src/db/models").Topic;
 const Post = require("../../src/db/models").Post;
+
 
 describe("routes : posts", () => {
 
@@ -50,6 +54,18 @@ describe("routes : posts", () => {
         });
       });
     });
+  });
+
+  describe("GET /categories/:categoryId/sections/:sectionId/topics/:topicId/posts/new", () => {
+
+    it("should render a new post form", (done) => {
+      request.get(`${base}/${this.category.id}/sections/${this.section.id}/topics/${this.topic.id}/posts/new`, (err, res, body) => {
+        expect(err).toBeNull();
+        expect(body).toContain("New Post");
+        done();
+      });
+    });
+
   });
 
 });

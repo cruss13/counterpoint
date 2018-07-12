@@ -22,6 +22,7 @@
       </ul>
 
       <a href="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/edit" class="btn btn-warning">Edit</a>
+      <a href="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/posts/new" class="btn btn-success">New Post</a>
 
       <form style="display:initial" action="/categories/<%= topic.categoryId %>/sections/<%= topic.sectionId %>/topics/<%= topic.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
